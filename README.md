@@ -17,6 +17,8 @@ A couple paragraphs about the general approach you took
     * set up mongodb
     * designed models and confirmed that db queries work
     * nested db queries for questions: find random and find all
+    * set up answer model
+    * wrote ajax api for loading and submitting answers
 
 Installation instructions for any dependencies
 
