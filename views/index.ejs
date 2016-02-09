@@ -9,15 +9,19 @@
     <p>Welcome to <%= title %></p>
 
     <form action="">
-      <p><%= question %></p>
-      <input type="text" placeholder="this is a placeholder">
-      <button>OK</button>
+      <p style="font-size: 18px; font-weight: bold;"><%= question %></p>
+      <input type="text" id="answer" placeholder="this is a placeholder">
     </form>
+    <button id="submit-answer">OK</button>
+
+    <section id="test"></section>
 
     <div style="margin-top: 10%;">
-      <p>This is a question logged from the DB</p>
-      <p>This is the first response</p>
-      <p>This is the second response</p>
+      <% for (var i=0; i<questions_list.length; i++) { %>
+      <p id="question_" style="font-size: 18px; font-weight: bold;"><%= questions_list[i].text %></p>
+      <% } %>
     </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script rel="text/javascript" src="/javascripts/main.js"></script>
   </body>
 </html>
