@@ -5,11 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %>009 works</h1>
-    <p>Welcome to <%= title %></p>
+    <h1><%= title %></h1>
 
     <form action="">
-      <p style="font-size: 18px; font-weight: bold;"><%= question %></p>
+      <p id="prompt_question" value="<%= question._id %> <%= question.category %>" style="font-size: 18px; font-weight: bold;"><%= question.text %></p>
       <input type="text" id="answer" placeholder="this is a placeholder">
     </form>
     <button id="submit-answer">OK</button>
@@ -17,8 +16,9 @@
     <section id="test"></section>
 
     <div style="margin-top: 10%;">
+      <h2>Survey Log:</h2>
       <% for (var i=0; i<questions_list.length; i++) { %>
-      <p id="question_" style="font-size: 18px; font-weight: bold;"><%= questions_list[i].text %></p>
+      <div><span class="question_" value="<%= questions_list[i]._id %>" style="font-size: 18px; font-weight: bold;"><%= questions_list[i].text %></span></div>
       <% } %>
     </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>

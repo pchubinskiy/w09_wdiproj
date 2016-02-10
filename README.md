@@ -20,6 +20,11 @@ A couple paragraphs about the general approach you took
     * set up answer model
     * wrote ajax api for loading and submitting answers
 
+    * used question _id as foreign key for answers to it
+    * loaded answers in survey log for the particular questions they were made in response to
+    * updated propmt question after user submission
+    * set answer show limit
+
 Installation instructions for any dependencies
 
 Link to your user stories – who are your users, what do they want, and why?
@@ -47,6 +52,14 @@ Descriptions of any unsolved problems or major hurdles your team had to overcome
     * collection was capitalized so query ran but returned empty array; fixed with Sean's help. 
     * forgot to write "module.exports = router;" at the end of my api. does "router" everything in its assignment location to the app?
     * remembering to require api router middleware in app.js
+    * heroku logs error: cannot find module mongoose-simple-random
+
+
+to do:
+    * fix heroku logs error: cannot find module mongoose-simple-random
+    * use handlebar or style page; maybe bootstrap for layout/responsive
+    * integrate a third-party another API
+    
 
 
 

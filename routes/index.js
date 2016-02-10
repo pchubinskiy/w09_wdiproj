@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
         }
         lock -= 1;
         var finishRequest = function() {
-          res.render('index', { title: 'QandA', question: question.text, questions_list: questions_list });
+          res.render('index', { title: 'QandA', question: question, questions_list: questions_list });
         }
         if (lock === 0) {
           //console.log("random q list: " + questions_list);
