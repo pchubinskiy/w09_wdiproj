@@ -4,18 +4,38 @@ var Answer = require('../../../models/answer');
 var Question = require('../../../models/question');
 
 router.get('/', function(req, res) {
+  lock = 1;
+  var date_sort_asc = function (date1, date2) {
+    // This is a comparison function that will result in dates being sorted in
+    // ASCENDING order. As you can see, JavaScript's native comparison operators
+    // can be used to compare dates. This was news to me.
+    console.log(date1);
+    console.log(date2);
+    if (date1.createdAt > date2.createdAt) return 1;
+    if (date1.createdAt < date2.createdAt) return -1;
+    return 0;
+  };
+  var date_sort_desc = function (date1, date2) {
+    // This is a comparison function that will result in dates being sorted in
+    // DESCENDING order.
+    console.log(date1);
+    console.log(date2);
+    if (date1.createdAt > date2.createdAt) return -1;
+    if (date1.createdAt < date2.createdAt) return 1;
+    return 0;
+  };
 
-  Answer.find({}, 'text category response_to', function(err, answer_list) {
+  Answer.find({}, 'text category response_to createdAt', function(err, answer_list) {
     if (err) {
       console.log(err);
       throw err;
     }
 
-    answer_list.sort(function(a,b) {
-      return b.createdAt - a.createdAt;
-    });
+    answer_list.sort(date_sort_asc);
 
-    res.status(200).json(answer_list);
+    //if (lock === 0) {
+      res.status(200).json(answer_list);
+    //}
   });
 });
 

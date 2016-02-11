@@ -1,5 +1,6 @@
 $(function() {
   var apiRoot = '/api/v1/answers/';
+  var lock = 0;
 
   function loadAnswers() {
 
@@ -33,13 +34,26 @@ $(function() {
 
   function appendAnswers(answer) {
       $('span.question_').each(function() {
-        var children = $(this).parent().children().length;
-        //console.log((this).innerHTML + " log children: " + (children - 1));
         if ((this).getAttribute("value") === answer.response_to) {
-          if (children <= 5) {
-              $(this).after('<p>' + answer.text + '</p>');
-          } else { return false;}
-        }
+
+          //console.log("iterating over: " + (this).getAttribute("value"));
+          $(this).parent().children('.par').each(function() {
+            //if the child's "value" attr (_id) is === to answer._id
+            //return false
+            //console.log("child: " + (this).innerHTML);
+            if ((this).getAttribute("value") === answer._id) {
+              return;
+            }
+          });
+
+          var children = $(this).parent().children().length;
+          //console.log((this).innerHTML + " log children: " + (children - 1));
+          //if ((this).getAttribute("value") === answer.response_to) {
+            if (children <= 5) {
+
+              $(this).after('<p class="par" value="' + answer._id + '">' + answer.text + '</p>');
+            } else { return;}
+        } else { return;}
       });
   }
 
@@ -70,9 +84,11 @@ $(function() {
         prompt_question: prompt_question
       },
     })
-    .done(function(answer) {
-      console.log("submit success: " + answer);
-      updateQuestion(answer);
+    .done(function(result) {
+      console.log("submit success: " + result);
+      updateQuestion(result);
+      lock += 1;
+      console.log("lock! " + lock);
       setTimeout(1000, loadAnswers());
     })
     .fail(function(jqXHR, textStatus) {
@@ -83,5 +99,47 @@ $(function() {
     });
   });
 
-  loadAnswers();
+  $(document).keypress(function(e) {
+    if(e.which == 13) {
+      e.preventDefault();
+      var answer = $('#answer').val();
+      var prompt_question = $('#prompt_question').attr("value");
+
+      if (!answer) {
+       return;
+      }
+
+      $('#answer').val("");
+      $('#prompt_question').val("");
+
+      $.ajax({
+       url: apiRoot,
+       type: 'POST',
+       dataType: 'json',
+       data: {
+         answer: answer,
+         prompt_question: prompt_question
+       },
+      })
+      .done(function(result) {
+       console.log("submit success: " + result);
+       updateQuestion(result);
+       lock += 1;
+       console.log("lock! " + lock);
+       setTimeout(1000, loadAnswers());
+      })
+      .fail(function(jqXHR, textStatus) {
+       console.log("submit error: " + textStatus);
+      })
+      .always(function() {
+       console.log("submit complete");
+      });
+    }
+  });
+
+  if (lock === 0) {
+    loadAnswers();
+  } else {
+    return;
+  }
 });

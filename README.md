@@ -25,6 +25,8 @@ A couple paragraphs about the general approach you took
     * updated propmt question after user submission
     * set answer show limit
 
+    * sorted loaded/updated answers by date created at
+
 Installation instructions for any dependencies
 
 Link to your user stories – who are your users, what do they want, and why?
@@ -53,10 +55,17 @@ Descriptions of any unsolved problems or major hurdles your team had to overcome
     * forgot to write "module.exports = router;" at the end of my api. does "router" everything in its assignment location to the app?
     * remembering to require api router middleware in app.js
     * heroku logs error: cannot find module mongoose-simple-random
+    * setting ENV var in heroku
+    * seeing double posts on page but one update in DB; is value not cleared after submit?
+    * to get update to work onclick and over time, appending _and_ removing answers is necessary
+    * is local storage worth using?
+
+    real-time functionality:
+    * use setInterval for when to update 
+    * use timestamp for updating
 
 
-to do:
-    * fix heroku logs error: cannot find module mongoose-simple-random
+ extra:
     * use handlebar or style page; maybe bootstrap for layout/responsive
     * integrate a third-party another API
     
