@@ -38,7 +38,7 @@ Link to your user stories – who are your users, what do they want, and why?
     = see a random question when I visit the page
     = submit an answer
     = see a log of questions 
-    * see answers to questions displayed from most to less recent 
+    = see answers to questions displayed from most to less recent 
     = see a question's answer log be updated with my answer immediately after I submit it
     
     + view questions by category
@@ -65,7 +65,7 @@ Descriptions of any unsolved problems or major hurdles your team had to overcome
     * use timestamp for updating
 
 
- extra:
+ extra, lol:
     * use handlebar or style page; maybe bootstrap for layout/responsive
     * integrate a third-party another API
     
