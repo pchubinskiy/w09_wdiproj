@@ -53,7 +53,7 @@ router.get('/', function(req, res) {
             deliverables,
             technologies
           ]
-          console.log(answer_list)
+          //console.log(answer_list)
           //console.log(general, challenges, deliverables, technologies);
           //if (lock === 0) {
             res.status(200).json(answer_list);

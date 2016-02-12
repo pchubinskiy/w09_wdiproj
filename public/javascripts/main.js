@@ -48,7 +48,7 @@ $(function() {
       if ((this).getAttribute("value") === answer.response_to) {
         $(this).children('.ans').each(function() {
           if ($(this).hasClass(number)) {
-            $(this).attr("value", answer._id).html(answer.text);
+            $(this).attr("value", answer._id).html(answer.text + '<span style="margin-left: 30px;">' + answer.createdAt + '</span>');
           }
         });
       } else { return;}
