@@ -12,7 +12,7 @@ $(function() {
       data: {},
     })
     .done(function(answers) {
-      console.log("success: " + answers);
+      console.log("success: " + answers.length);
       displayAnswers(answers);
     })
     .fail(function() {
@@ -24,37 +24,52 @@ $(function() {
   }
 
   function displayAnswers(answers) {
-    $('#answer').empty();
+    //$('#answer').empty();
 
     for (var i=0; i<answers.length; i++) {
-      var answer = answers[i];
-      appendAnswers(answer);
+      for (var j=0; j<answers[i].length; j++) {
+        var answer = answers[i][j];
+        appendAnswers(answer, i, j);
+      }
     }
+    // for (var i=0; i<answers.length; i++) {
+    //   var answer = answers[i];
+    //   appendAnswers(answer, i);
+    // }
   }
 
-  function appendAnswers(answer) {
-      $('span.question_').each(function() {
-        if ((this).getAttribute("value") === answer.response_to) {
+  function appendAnswers(answer, q, a) {
+    var number = a;
+    //var n = index + 2;
+    console.log(number);
+    // $('#log:nth-child(q):nth-child(a)').html("test");
 
-          //console.log("iterating over: " + (this).getAttribute("value"));
-          $(this).parent().children('.par').each(function() {
-            //if the child's "value" attr (_id) is === to answer._id
-            //return false
-            //console.log("child: " + (this).innerHTML);
-            if ((this).getAttribute("value") === answer._id) {
-              return;
-            }
-          });
+    $('div.question_').each(function() {
+      if ((this).getAttribute("value") === answer.response_to) {
+        $(this).children('.ans').each(function() {
+          if ($(this).hasClass(number)) {
+            $(this).attr("value", answer._id).html(answer.text);
+          }
+        });
+      } else { return;}
+    });
+          // //console.log("iterating over: " + (this).getAttribute("value"));
+          // $(this).parent().children('.ans').each(function() {
+          //   //if the child's "value" attr (_id) is === to answer._id
+          //   //return false
+          //   //console.log("child: " + (this).innerHTML);
+          //   if ((this).getAttribute("value") === answer._id) {
+          //     return;
+          //   }
+          // });
 
-          var children = $(this).parent().children().length;
-          //console.log((this).innerHTML + " log children: " + (children - 1));
-          //if ((this).getAttribute("value") === answer.response_to) {
-            if (children <= 5) {
+          // var children = $(this).parent().children().length;
+          // //console.log((this).innerHTML + " log children: " + (children - 1));
+          // //if ((this).getAttribute("value") === answer.response_to) {
+          //   if (children <= 5) {
 
-              $(this).after('<p class="par" value="' + answer._id + '">' + answer.text + '</p>');
-            } else { return;}
-        } else { return;}
-      });
+          //     //$(this).children().after().html('<p class="ans" value="' + answer._id + '">' + answer.text + '</p>');
+          //   } else { return;}
   }
 
   function updateQuestion(question) {
@@ -136,6 +151,8 @@ $(function() {
       });
     }
   });
+
+  window.setInterval(loadAnswers, 1000);
 
   if (lock === 0) {
     loadAnswers();
