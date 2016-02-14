@@ -69,6 +69,9 @@ Descriptions of any unsolved problems or major hurdles your team had to overcome
     * use handlebar or style page; maybe bootstrap for layout/responsive
     * integrate a third-party another API
     
-
+templatestrings js
+sockets.io
+breakpoints
+moment.js
 
 

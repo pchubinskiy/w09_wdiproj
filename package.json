@@ -12,6 +12,7 @@
     "ejs": "~2.3.3",
     "express": "^4.13.4",
     "handlebars": "^4.0.5",
+    "moment": "^2.11.2",
     "mongoose": "^4.4.2",
     "mongoose-simple-random": "^0.3.3",
     "morgan": "~1.6.1",

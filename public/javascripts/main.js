@@ -39,41 +39,21 @@ $(function() {
   }
 
   function appendAnswers(answer, q, a) {
-    var number = a;
-    //var n = index + 2;
+    var content = answer.text + '<span style="margin-left: 30px;">' + answer.createdAt + '</span>'
     console.log(number);
-    // $('#log:nth-child(q):nth-child(a)').html("test");
 
     $('div.question_').each(function() {
       if ((this).getAttribute("value") === answer.response_to) {
         $(this).children('.ans').each(function() {
           if ($(this).hasClass(number)) {
-            $(this).attr("value", answer._id).html(answer.text + '<span style="margin-left: 30px;">' + answer.createdAt + '</span>');
+            $(this).attr("value", answer._id).html(content);
           }
         });
       } else { return;}
     });
-          // //console.log("iterating over: " + (this).getAttribute("value"));
-          // $(this).parent().children('.ans').each(function() {
-          //   //if the child's "value" attr (_id) is === to answer._id
-          //   //return false
-          //   //console.log("child: " + (this).innerHTML);
-          //   if ((this).getAttribute("value") === answer._id) {
-          //     return;
-          //   }
-          // });
-
-          // var children = $(this).parent().children().length;
-          // //console.log((this).innerHTML + " log children: " + (children - 1));
-          // //if ((this).getAttribute("value") === answer.response_to) {
-          //   if (children <= 5) {
-
-          //     //$(this).children().after().html('<p class="ans" value="' + answer._id + '">' + answer.text + '</p>');
-          //   } else { return;}
   }
 
   function updateQuestion(question) {
-    //console.log("trying to update Q " + question.text);
     $("#prompt_question").html(question.text);
     var new_question_info = question._id + " " + question.category;
     $("#prompt_question").attr("value", new_question_info);
