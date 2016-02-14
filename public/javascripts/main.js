@@ -34,7 +34,7 @@ $(function() {
 
   function appendAnswers(answer, q, a) {
     var number = a;
-    var content = answer.text + '<span style="margin-left: 30px;">' + answer.createdAt + '</span>';
+    var content = answer.text + '<span class="answer_item">' + answer.createdAt + '</span>';
 
     $('div.question_').each(function() {
       if ((this).getAttribute("value") === answer.response_to) {

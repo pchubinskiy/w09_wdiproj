@@ -25,3 +25,7 @@ a {
   font-size: 18px;
   font-weight: bold;
 }
+
+.answer_item {
+  margin-left: 30px;
+}
