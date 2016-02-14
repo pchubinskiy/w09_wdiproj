@@ -24,23 +24,17 @@ $(function() {
   }
 
   function displayAnswers(answers) {
-    //$('#answer').empty();
-
     for (var i=0; i<answers.length; i++) {
       for (var j=0; j<answers[i].length; j++) {
         var answer = answers[i][j];
         appendAnswers(answer, i, j);
       }
     }
-    // for (var i=0; i<answers.length; i++) {
-    //   var answer = answers[i];
-    //   appendAnswers(answer, i);
-    // }
   }
 
   function appendAnswers(answer, q, a) {
-    var content = answer.text + '<span style="margin-left: 30px;">' + answer.createdAt + '</span>'
-    console.log(number);
+    var number = a;
+    var content = answer.text + '<span style="margin-left: 30px;">' + answer.createdAt + '</span>';
 
     $('div.question_').each(function() {
       if ((this).getAttribute("value") === answer.response_to) {
@@ -54,6 +48,7 @@ $(function() {
   }
 
   function updateQuestion(question) {
+    //console.log("trying to update Q " + question.text);
     $("#prompt_question").html(question.text);
     var new_question_info = question._id + " " + question.category;
     $("#prompt_question").attr("value", new_question_info);

@@ -8,22 +8,22 @@
     <h1><%= title %></h1>
 
     <form action="">
-      <p id="prompt_question" value="<%= question._id %> <%= question.category %>" style="font-size: 18px; font-weight: bold;"><%= question.text %></p>
+      <p id="prompt_question" value="<%= question._id %> <%= question.category %>"><%= question.text %></p>
       <input type="text" id="answer" placeholder="this is a placeholder">
     </form>
     <button id="submit-answer">OK</button>
 
 
-    <div id="log" style="margin-top: 10%;">
+    <div id="log">
       <h2>Survey Log:</h2>
       <% for (var i=0; i<questions_list.length; i++) { %>
       <div class="q_a_wrapper">
-        <div class="question_" value="<%= questions_list[i]._id %>" style="font-size: 18px; font-weight: bold;"><%= questions_list[i].text %>
-          <p class="ans 0" style="font-size: 12px; font-weight: normal;" value=""></p>
-          <p class="ans 1" style="font-size: 12px; font-weight: normal;" value=""></p>
-          <p class="ans 2" style="font-size: 12px; font-weight: normal;" value=""></p>
-          <p class="ans 3" style="font-size: 12px; font-weight: normal;" value=""></p>
-          <p class="ans 4" style="font-size: 12px; font-weight: normal;" value=""></p>
+        <div class="question_" value="<%= questions_list[i]._id %>"><%= questions_list[i].text %>
+          <p class="ans 0" value=""></p>
+          <p class="ans 1" value=""></p>
+          <p class="ans 2" value=""></p>
+          <p class="ans 3" value=""></p>
+          <p class="ans 4" value=""></p>
         </div>
       </div>
       <% } %>
