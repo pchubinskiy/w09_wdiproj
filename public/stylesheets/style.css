@@ -33,11 +33,6 @@ h2 {
   margin-top: 5%;
 }
 
-.ans {
-  font-size: 12px;
-  font-weight: normal;
-}
-
 .q_a_wrapper {
   display: inline-block;
 }
@@ -49,4 +44,6 @@ h2 {
 
 .answer_item {
   margin-left: 30px;
+  font-size: 12px;
+  font-weight: normal;
 }
