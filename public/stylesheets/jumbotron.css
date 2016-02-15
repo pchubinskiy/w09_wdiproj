@@ -1,0 +1,30 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.jumbotron {
+
+}
+
+/*customized versions of default bootstrap jumbotron classes*/
+.btn-custom-primary {
+  color: #fff;
+  background-color: #33B749;
+  border-color: #2EA437;
+}
+
+.navbar-custom-inverse {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.navbar-custom-brand {
+  color: #fff;
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}

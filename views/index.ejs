@@ -2,33 +2,111 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <h1><%= title %></h1>
 
-    <form action="">
-      <p id="prompt_question" value="<%= question._id %> <%= question.category %>"><%= question.text %></p>
-      <input type="text" id="answer" placeholder="this is a placeholder">
-    </form>
-    <button id="submit-answer">OK</button>
+    <nav class="navbar navbar-custom-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-custom-brand" href="#"><%= title %></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <!--<form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>-->
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
 
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1><%= title %></h1>
+        <form action="">
+          <p id="prompt_question" value="<%= question._id %> <%= question.category %>"><%= question.text %></p>
+          <input id="answer" class="col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-lg-3 col-md-3 col-sm-3 col-xs-3" type="text" placeholder=". . . .">
+        </form>
+        <button id="submit-answer" class="submit-button btn-custom-primary btn btn-lg col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" href="#" role="button">OK</button>
+      </div>
+    </div>
 
-    <div id="log">
-      <h2>Survey Log:</h2>
-      <% for (var i=0; i<questions_list.length; i++) { %>
-      <div class="q_a_wrapper">
-        <div class="question_" value="<%= questions_list[i]._id %>"><%= questions_list[i].text %>
-          <p class="ans 0" value=""></p>
-          <p class="ans 1" value=""></p>
-          <p class="ans 2" value=""></p>
-          <p class="ans 3" value=""></p>
-          <p class="ans 4" value=""></p>
+    <h2 class="">Survey Log:</h2>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div id="log">
+          <% for (var i=0; i<questions_list.length; i++) { %>
+          <div class="q_a_wrapper col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="question_<%=i%>" value="<%= questions_list[i]._id %>"><%= questions_list[i].text %>
+              <p id="ans <%=i%>-0" class="answer_item" value=""></p>
+              <p id="ans <%=i%>-1" class="answer_item" value=""></p>
+              <p id="ans <%=i%>-2" class="answer_item" value=""></p>
+              <p id="ans <%=i%>-3" class="answer_item" value=""></p>
+              <p id="ans <%=i%>-4" class="answer_item" value=""></p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+          </div>
+          <% } %>
         </div>
       </div>
-      <% } %>
-    </div>
+
+      <hr>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script rel="text/javascript" src="/javascripts/main.js"></script>
+<!-- --><!-- --><!-- --><!-- -->
+
+          <footer>
+        <p>&copy; 2016 Paul Chubinskiy</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/bootstrap/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

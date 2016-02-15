@@ -7,18 +7,39 @@ a {
   color: #00B7FF;
 }
 
-.prompt_question {
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#prompt_question {
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
+}
+
+#answer {
+  border-radius: 5px;
+}
+
+#submit-answer {
+
 }
 
 #log {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .ans {
   font-size: 12px;
   font-weight: normal;
+}
+
+.q_a_wrapper {
+  display: inline-block;
 }
 
 .question_ {

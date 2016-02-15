@@ -12,7 +12,7 @@ $(function() {
       data: {},
     })
     .done(function(answers) {
-      console.log("success: " + answers.length);
+      console.log("success: " + answers);
       displayAnswers(answers);
     })
     .fail(function() {
@@ -32,23 +32,13 @@ $(function() {
     }
   }
 
-  function appendAnswers(answer, q, a) {
-    var number = a;
+  function appendAnswers(answer, i, j) {
     var content = answer.text + '<span class="answer_item">' + answer.createdAt + '</span>';
-
-    $('div.question_').each(function() {
-      if ((this).getAttribute("value") === answer.response_to) {
-        $(this).children('.ans').each(function() {
-          if ($(this).hasClass(number)) {
-            $(this).attr("value", answer._id).html(content);
-          }
-        });
-      } else { return;}
-    });
+    var logged_ans = document.getElementById("ans "+i+"-"+j);
+    logged_ans.innerHTML = content;
   }
 
   function updateQuestion(question) {
-    //console.log("trying to update Q " + question.text);
     $("#prompt_question").html(question.text);
     var new_question_info = question._id + " " + question.category;
     $("#prompt_question").attr("value", new_question_info);
