@@ -4,10 +4,6 @@ body {
   padding-bottom: 20px;
 }
 
-.jumbotron {
-
-}
-
 /*customized versions of default bootstrap jumbotron classes*/
 .btn-custom-primary {
   color: #fff;
