@@ -56,9 +56,10 @@ Link to your wireframes – sketches of major views / interfaces in your applica
     * ./survey_app.png
 
 Descriptions of any unsolved problems or major hurdles your team had to overcome
+    ! unresolved: include all major crud functions--the MVP didn't really need update/delete routes
     * express required empty repo for setup; created new folder inside git-initialized folder; deployed to heroku but didn't see index page because heroku was finding the outer .git folder and not the inner (app/express) folder
     * collection was capitalized so query ran but returned empty array; fixed with Sean's help. 
-    * forgot to write "module.exports = router;" at the end of my api. does "router" everything in its assignment location to the app?
+    * forgot to write "module.exports = router;" at the end of my api. does "router" assign everything in its location to the app?
     * remembering to require api router middleware in app.js
     * heroku logs error: cannot find module mongoose-simple-random
     * setting ENV var in heroku
