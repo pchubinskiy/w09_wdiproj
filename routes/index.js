@@ -11,8 +11,6 @@ router.get('/', function(req, res, next) {
       console.log(err);
       throw err;
     }
-    //lock -= 1;
-    //console.log("random q: " + question);
 
     if (question) {
       Question.find({}, 'text category', function(err, questions_list) {
@@ -25,14 +23,11 @@ router.get('/', function(req, res, next) {
           res.render('index', { title: 'QandA', question: question, questions_list: questions_list });
         }
         if (lock === 0) {
-          //console.log("random q list: " + questions_list);
           finishRequest();
         }
       });
     }
   });
 });
-
-//setTimeout() or alternative on homepage to update answers to questions as they are submitted
 
 module.exports = router;

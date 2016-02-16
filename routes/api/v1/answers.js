@@ -34,7 +34,8 @@ router.get('/', function(req, res) {
             technologies
           ]
 
-          console.log("the current moment: " + moment().format("h:mm a, MM/DD/YYYY"));
+          //testing moment.js
+          //console.log("the current moment: " + moment().format("h:mm a, MM/DD/YYYY"));
           res.status(200).json(answer_list);
 
         }).limit(5).sort({ createdAt: 1 });;
