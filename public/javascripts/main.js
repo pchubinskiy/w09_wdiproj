@@ -33,7 +33,7 @@ $(function() {
   }
 
   function appendAnswers(answer, i, j) {
-    var content = answer.text + '<span class="answer_item">' + answer.createdAt + '</span>';
+    var content = answer.text + '<span class="answer_item">' + answer.formattedDate + '</span>';
     var logged_ans = document.getElementById("ans "+i+"-"+j);
     logged_ans.innerHTML = content;
   }

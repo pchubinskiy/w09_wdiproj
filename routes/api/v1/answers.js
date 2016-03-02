@@ -27,21 +27,27 @@ router.get('/', function(req, res) {
             throw err;
           }
 
-          var answer_list = [
+          var answerList = [
             general,
             challenges,
             deliverables,
             technologies
           ]
 
-          //testing moment.js
-          //console.log("the current moment: " + moment().format("h:mm a, MM/DD/YYYY"));
-          res.status(200).json(answer_list);
+          for (var i=0; i<answerList.length; i++) {
+            for (var j=0; j<answerList[i].length; j++) {
+              answerList[i][j].formattedDate = moment(answerList[i][j].createdAt).format("h:mm a, MM/DD/YY");
+            }
+          }
 
-        }).limit(5).sort({ createdAt: 1 });;
-      }).limit(5).sort({ createdAt: 1 });;
-    }).limit(5).sort({ createdAt: 1 });;
-  }).limit(5).sort({ createdAt: 1 });
+          //console.log("answer list: " + answerList);
+
+          res.status(200).json(answerList);
+
+        }).limit(5).sort({ createdAt: -1 });
+      }).limit(5).sort({ createdAt: -1 });
+    }).limit(5).sort({ createdAt: -1 });
+  }).limit(5).sort({ createdAt: -1 });
 });
 
 router.post('/', function(req, res) {
