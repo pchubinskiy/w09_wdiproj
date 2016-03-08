@@ -6,32 +6,32 @@ var moment = require('moment');
 
 router.get('/', function(req, res) {
 
-  Answer.find({category: "general"}, 'text category response_to createdAt', function(err, general) {
+  Answer.find({category: "reading"}, 'text category response_to createdAt', function(err, reading) {
     if (err) {
       console.log(err);
       throw err;
     }
-    Answer.find({category: "challenges"}, 'text category response_to createdAt', function(err, challenges) {
+    Answer.find({category: "sports"}, 'text category response_to createdAt', function(err, sports) {
       if (err) {
         console.log(err);
         throw err;
       }
-      Answer.find({category: "deliverables"}, 'text category response_to createdAt', function(err, deliverables) {
+      Answer.find({category: "movies"}, 'text category response_to createdAt', function(err, movies) {
         if (err) {
           console.log(err);
           throw err;
         }
-        Answer.find({category: "technologies"}, 'text category response_to createdAt', function(err, technologies) {
+        Answer.find({category: "food"}, 'text category response_to createdAt', function(err, food) {
           if (err) {
             console.log(err);
             throw err;
           }
 
           var answerList = [
-            general,
-            challenges,
-            deliverables,
-            technologies
+            reading,
+            sports,
+            movies,
+            food
           ]
 
           for (var i=0; i<answerList.length; i++) {
@@ -39,8 +39,6 @@ router.get('/', function(req, res) {
               answerList[i][j].formattedDate = moment(answerList[i][j].createdAt).format("h:mm a, MM/DD/YY");
             }
           }
-
-          //console.log("answer list: " + answerList);
 
           res.status(200).json(answerList);
 
