@@ -33,22 +33,21 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: darkorange;
 }
 
 .jumbotron h1 {
   text-align: center;
-  color: darkorange;
+  color: #A94242;
 }
 
 h2 {
   text-align: center;
-  color: #8a6d3b;
+  color: rgba(138, 109, 59, 0.78);
 }
 
 h3.text-muted {
   color: darkorange;
-/*  color: #00B7FF;*/
 }
 
 #prompt_question {
@@ -60,11 +59,11 @@ h3.text-muted {
 
 #log {
   margin-top: 5%;
-  color: darkorange;
+  color: #A94242;
 }
 
 .jumbotron {
-  background-color: rgba(255, 165, 0, 0.82);
+  background-color: rgba(255, 165, 0, 0.51);
 }
 
 .btn-lg {
@@ -73,16 +72,16 @@ h3.text-muted {
 }
 
 .btn-lg:hover {
-  background-color: #8a6d3b;
-  border-color: #8a6d3b;
+  background-color: rgba(255, 140, 0, 0.83);
+  border-color: rgba(255, 140, 0, 0.83);
 }
 
 .nav-pills>li.active>a {
-  background-color: #8a6d3b;
+  background-color: rgba(138, 109, 59, 0.78);
 }
 
 .question_ p {
-  color: #8a6d3b;
+  color: darkorange;
 }
 
 
