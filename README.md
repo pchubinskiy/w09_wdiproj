@@ -68,7 +68,7 @@ Moment.js date/time library
 
 **Descriptions of any unsolved problems or major hurdles your team had to overcome**
 
-    ! unresolved: include all major crud functions--the MVP didn't really need update/delete routes
+    ** include all major crud functions: the MVP didn't really need update/delete routes
     * express required empty repo for setup; created new folder inside git-initialized folder; deployed to heroku but didn't see index page because heroku was finding the outer .git folder and not the inner (app/express) folder
     * collection was capitalized so query ran but returned empty array; fixed with Sean's help. 
     * forgot to write "module.exports = router;" at the end of my api. does "router" assign everything in its location to the app?
@@ -81,7 +81,7 @@ Moment.js date/time library
     * installed moment.js, but not sure how to format dates (best guess: http://www.sitepoint.com/whats-the-best-date-format/)
 
  extra:
- 
+
     * use handlebar or style page; maybe bootstrap for layout/responsive
     * integrate a third-party another API
     * templatestrings js
