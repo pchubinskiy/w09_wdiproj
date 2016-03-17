@@ -18,6 +18,7 @@ Bootstrap
 + used for jumbotron layout
 
 **A couple paragraphs about the general approach you took**
+
     made directory locally
     set up express in repo
     made repo in github; created a remote for it in git
@@ -36,12 +37,17 @@ Bootstrap
     real-time functionality: used setInterval to update 
 
 **Installation instructions for any dependencies**
+
 Mongoose simple random package (npm)
+
 + install with: $ npm i mongoose-simple-random
+
 Moment.js date/time library
+
 + install with: $ npm install moment
 
 **Link to your user stories – who are your users, what do they want, and why?**
+
     Users: GA students
     They want: to be able to use a survey app to answer questions about their needs and workflow
     Why: So they can gauge how others are experiencing or using similar things
@@ -61,6 +67,7 @@ Moment.js date/time library
     ./survey_app.png
 
 **Descriptions of any unsolved problems or major hurdles your team had to overcome**
+
     ! unresolved: include all major crud functions--the MVP didn't really need update/delete routes
     * express required empty repo for setup; created new folder inside git-initialized folder; deployed to heroku but didn't see index page because heroku was finding the outer .git folder and not the inner (app/express) folder
     * collection was capitalized so query ran but returned empty array; fixed with Sean's help. 
@@ -74,6 +81,7 @@ Moment.js date/time library
     * installed moment.js, but not sure how to format dates (best guess: http://www.sitepoint.com/whats-the-best-date-format/)
 
  extra:
+ 
     * use handlebar or style page; maybe bootstrap for layout/responsive
     * integrate a third-party another API
     * templatestrings js
