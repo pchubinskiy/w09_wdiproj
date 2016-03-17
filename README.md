@@ -7,6 +7,7 @@ URL: https://w09wdiproj.herokuapp.com/
 Mongoose simple random package (npm)
 + used in question.js for getting a random question from collection
 + use case: https://www.npmjs.com/package/mongoose-simple-random
+
 Moment.js date/time library
 + Used to format dates as desired--in this case numerically--so mongoose can sort by most recent user answers.
 Bootstrap
