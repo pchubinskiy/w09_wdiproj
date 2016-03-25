@@ -68,8 +68,6 @@ $(function() {
       console.log("submit success: " + result);
       updateQuestion(result);
       lock += 1;
-      // console.log("lock! " + lock);
-      // setTimeout(1000, loadAnswers());
     })
     .fail(function(jqXHR, textStatus) {
       console.log("submit error: " + textStatus);
@@ -105,8 +103,6 @@ $(function() {
        console.log("submit success: " + result);
        updateQuestion(result);
        lock += 1;
-       // console.log("lock! " + lock);
-       // setTimeout(1000, loadAnswers());
       })
       .fail(function(jqXHR, textStatus) {
        console.log("submit error: " + textStatus);
