@@ -1,0 +1,105 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#answer {
+  border-radius: 5px;
+}
+
+#submit-answer {
+
+}
+
+.q_a_wrapper {
+  display: inline-block;
+}
+
+.mrg-top {
+  margin-top: 15px;
+}
+
+.question_ {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.answer_item {
+  margin-left: 30px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* LESS CSS */ /* LESS CSS */ /* LESS CSS */ /* LESS CSS */ /* LESS CSS */
+
+@text-align: center;
+@weight: bold;
+
+/* COLOR SCHEME */
+@color1: #000000; /* black */
+@color2: #A94242; /* maroon */
+@color3: rgba(59, 140, 197, 0.78); /*light blue*/
+@color4: #ffffff; /* white */
+@color5: rgba(208, 208, 208, 0.51); /*light grey*/
+@color6: darken(@color3, 15%); /* medium blue */
+
+body {
+  background-color: @color4;
+}
+
+a:link, a:visited {
+  color: @color2;
+}
+
+a:link:active, a:visited:active {
+  color: @color2;
+}
+
+h2 {
+  text-align: @text-align;
+  color: @color4;
+}
+
+h3.text-muted {
+  color: @color2;
+}
+
+#prompt_question {
+  font-size: 28px;
+  font-weight: @weight;
+  text-align: @text-align;
+  color: @color2;
+}
+
+#log {
+  margin-top: 5%;
+  color: @color2;
+}
+
+.jumbotron {
+  background-color: @color5;
+}
+
+.btn-lg {
+  background-color: @color6;
+  border-color: @color6;
+}
+
+.btn-lg:hover {
+  background-color: @color3;
+  border-color: @color3;
+}
+
+.nav-pills>li.active>a {
+  background-color: @color3;
+}
+
+.question_ p {
+  color: @color6;
+}
+
+a#submit-answer {
+  color: @color4;
+}
+
+

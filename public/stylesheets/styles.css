@@ -1,0 +1,82 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+#answer {
+  border-radius: 5px;
+}
+.q_a_wrapper {
+  display: inline-block;
+}
+.mrg-top {
+  margin-top: 15px;
+}
+.question_ {
+  font-size: 18px;
+  font-weight: bold;
+}
+.answer_item {
+  margin-left: 30px;
+  font-size: 12px;
+  font-weight: normal;
+}
+/* LESS CSS */
+/* LESS CSS */
+/* LESS CSS */
+/* LESS CSS */
+/* LESS CSS */
+/* COLOR SCHEME */
+/* black */
+/* maroon */
+/*light blue*/
+/* white */
+/*light grey*/
+/* medium blue */
+body {
+  background-color: #ffffff;
+}
+a:link,
+a:visited {
+  color: #A94242;
+}
+a:link:active,
+a:visited:active {
+  color: #A94242;
+}
+h2 {
+  text-align: center;
+  color: #ffffff;
+}
+h3.text-muted {
+  color: #A94242;
+}
+#prompt_question {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #A94242;
+}
+#log {
+  margin-top: 5%;
+  color: #A94242;
+}
+.jumbotron {
+  background-color: rgba(208, 208, 208, 0.51);
+}
+.btn-lg {
+  background-color: rgba(41, 98, 139, 0.78);
+  border-color: rgba(41, 98, 139, 0.78);
+}
+.btn-lg:hover {
+  background-color: rgba(59, 140, 197, 0.78);
+  border-color: rgba(59, 140, 197, 0.78);
+}
+.nav-pills > li.active > a {
+  background-color: rgba(59, 140, 197, 0.78);
+}
+.question_ p {
+  color: rgba(41, 98, 139, 0.78);
+}
+a#submit-answer {
+  color: #ffffff;
+}
